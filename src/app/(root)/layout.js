@@ -18,8 +18,8 @@ const geistMono = localFont({
 });
 
 export default function RootLayout({ children }) {
+  const router = useRouter()
   useEffect(()=>{
-    const router = useRouter()
     const user = localStorage.getItem('User')
     if(!user){
     router.push(`/Login`)
