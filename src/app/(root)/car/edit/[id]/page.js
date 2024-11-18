@@ -32,7 +32,7 @@ export default function EditPage({ params }) {
   useEffect(() => {
     console.log(id)
     const getProducts = async () => {
-      const res = await fetch(`http://localhost:3000/api/eachProduct?id=${id}`)
+      const res = await fetch(`${BASE_API_URL}/api/eachProduct?id=${id}`)
       const result = await res.json()
       const data = result.res
       console.log(data)
