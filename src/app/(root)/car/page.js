@@ -3,9 +3,13 @@ import { useRouter } from "next/navigation";
 
 export default function CarDetailPage() {
   const router = useRouter();
-  const { carData } = router.query;
+  const [car, setCar] = useState(null)
 
-  const car = carData ? JSON.parse(carData) : null;
+  useEffect(() => {
+    if (router && router.query && router.query.carData) {
+      setCar(JSON.parse(router.query.carData))
+    }
+  }, [router])
 
   if (!car) return <p>No data available</p>;
 
