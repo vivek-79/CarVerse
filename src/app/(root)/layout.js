@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 import TopBar from "@/components/TopBar";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -18,6 +19,7 @@ const geistMono = localFont({
 
 export default function RootLayout({ children }) {
   useEffect(()=>{
+    const router = useRouter()
     const user = localStorage.getItem('User')
     if(!user){
     router.push(`/Login`)
