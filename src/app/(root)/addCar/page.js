@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import '../root.css'
 import { useRouter } from 'next/navigation'
 import { BASE_API_URL } from '@/utils/constants'
-function page() {
+function Page() {
 
     const {register,handleSubmit ,formState: { errors }} = useForm()
     const [photo, setPhoto] = useState([]);
@@ -239,4 +239,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

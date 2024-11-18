@@ -3,7 +3,7 @@ import Card from '@/components/Card'
 import React, { useEffect, useState } from 'react'
 import './root.css'
 import { BASE_API_URL } from '@/utils/constants'
-function page() {
+function Page() {
 
   if(!BASE_API_URL){
     return null;
@@ -29,4 +29,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

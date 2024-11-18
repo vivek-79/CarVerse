@@ -9,7 +9,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { BASE_API_URL } from '@/utils/constants'
 
-function page() {
+function Page() {
 
     const { register, handleSubmit } = useForm()
     const [error,seterror] = useState('')
@@ -84,4 +84,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
