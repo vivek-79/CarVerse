@@ -22,6 +22,6 @@ export async function GET (req,res){
         }
         return NextResponse.json({success:true,message:'Success',res},{status:200})
     } catch (error) {
-        return NextResponse.json({success:true,message:error.message},{status:500})
+        return NextResponse.json({success:false,message:error.message},{status:500})
     }
 }
