@@ -13,7 +13,7 @@ function TopBar() {
     useEffect(() => {
         const user = localStorage.getItem('User')
         if(!user){
-            router.push('/login')
+            router.push('/Login')
         }
         if (user) {
             try {

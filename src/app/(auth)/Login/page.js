@@ -3,7 +3,7 @@
 
 'use client'
 import React, { useState } from 'react'
-import '../Register/register.css'
+import './register.css'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
