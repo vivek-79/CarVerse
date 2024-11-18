@@ -11,7 +11,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { BASE_API_URL } from '@/utils/constants'
 
-function Page() {
+export default function LoginPage() {
 
     const router = useRouter()
     const { register, handleSubmit } = useForm()
@@ -73,5 +73,3 @@ function Page() {
         </div>
     )
 }
-
-export default Page

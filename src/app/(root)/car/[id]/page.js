@@ -5,7 +5,7 @@ import styles from "./CarPage.module.css";
 import { useRouter } from 'next/navigation';
 import { BASE_API_URL } from '@/utils/constants';
 
-function Page({params}) {
+export default function CarPage({params}) {
 
     const router = useRouter()
     const [carData,setCarData] = useState({})
@@ -77,5 +77,3 @@ function Page({params}) {
     </div>
   )
 }
-
-export default Page

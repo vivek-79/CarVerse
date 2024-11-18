@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form'
 import '../root.css'
 import { useRouter } from 'next/navigation'
 import { BASE_API_URL } from '@/utils/constants'
-function Page() {
+export default function AddCarPage() {
 
     const {register,handleSubmit ,formState: { errors }} = useForm()
     const [photo, setPhoto] = useState([]);
@@ -238,5 +238,3 @@ function Page() {
     </div>
   )
 }
-
-export default Page

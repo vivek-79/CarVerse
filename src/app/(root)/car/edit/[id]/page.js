@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import './custm.css'
 import '../../../root.css'
 import { BASE_API_URL } from '@/utils/constants';
-function page({ params }) {
+export default function EditPage({ params }) {
 
   const [images, setimages] = useState([])
   const [carData, setCarData] = useState({
@@ -287,4 +287,3 @@ function page({ params }) {
   )
 }
 
-export default page

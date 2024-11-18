@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from "next/navigation";
 
-function CarPage() {
+export default function CarDetailPage() {
   const router = useRouter();
   const { carData } = router.query;
 
@@ -24,5 +24,3 @@ function CarPage() {
     </div>
   );
 }
-
-export default CarPage;
