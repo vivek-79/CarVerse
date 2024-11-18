@@ -78,7 +78,7 @@ export default function SignupPage() {
                 <div className='form-comp' id='button'>
                     <button type='submit'>Submit</button>
                 </div>
-                <p>Alredy have account ?| <Link href='/login'>Login</Link></p>
+                <p>Alredy have account ?| <Link href='/Login'>Login</Link></p>
             </form>
         </div>
     )

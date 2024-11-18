@@ -3,7 +3,7 @@
 
 'use client'
 import React, { useState } from 'react'
-import '../register/register.css'
+import '../Register/register.css'
 import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
@@ -52,9 +52,10 @@ export default function LoginPage() {
                     <input type='text'
                     placeholder='Email'
                         required
-                        {...register('email')}
+                        {...register('email', { pattern: /^[^@]+@[^@]+\.[^@]+$/ })}
                     />
                     <MailIcon sx={{color:'gray'}}/>
+                    {error.email && <p className='error'>{errors.email.message}</p>}
                 </div>
                 <div className='form-comp'>
                     <input type='password'
@@ -68,7 +69,7 @@ export default function LoginPage() {
                 <div className='form-comp' id='button'>
                     <button type='submit'>Submit</button>
                 </div>
-                <p>Don&apos;t have account ?| <Link href='/register'>Signup</Link></p>
+                <p>Don&apos;t have account ?| <Link href='/Register'>Signup</Link></p>
             </form>
         </div>
     )

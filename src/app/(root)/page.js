@@ -3,16 +3,21 @@ import Card from '@/components/Card'
 import React, { useEffect, useState } from 'react'
 import './root.css'
 import { BASE_API_URL } from '@/utils/constants'
+import { useRouter } from 'next/navigation'
 export default function HomePage() {
 
   if(!BASE_API_URL){
     return null;
   }
   const [cars,setCars] = useState([])
-
+  const router = useRouter()
   useEffect(()=>{
     const user = localStorage.getItem('User')
     const userId =JSON.parse(user)._id
+
+    if(!userId){
+      router.push('/Login')
+    }
     const getProducts= async()=>{
       const res = await fetch(`${BASE_API_URL}/api/listProduct?userId=${userId}`)
       const result= await res.json()
