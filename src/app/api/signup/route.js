@@ -3,7 +3,6 @@
 import { dbConnect } from "@/lib/dbConnect";
 import { NextResponse } from "next/server";
 import { User } from "@/models/user.model";
-// import { sendEmail } from "@/utils/mailer";
 
 export async function POST(req) {
 
@@ -40,7 +39,6 @@ export async function POST(req) {
             )
         }
 
-        // await sendEmail({email,emailType:"VERIFY",userId:createdUser._id})
         return NextResponse.json({ success: true ,createdUser }, 
             { status:201}
         )

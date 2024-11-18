@@ -5,6 +5,9 @@ import './root.css'
 import { BASE_API_URL } from '@/utils/constants'
 function page() {
 
+  if(!BASE_API_URL){
+    return null;
+  }
   const [cars,setCars] = useState([])
 
   useEffect(()=>{
