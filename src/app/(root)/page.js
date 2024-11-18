@@ -18,7 +18,7 @@ export default function HomePage() {
       return null;
     }
     if(!userId){
-      router.push(`/Login`)
+      router.push(`${BASE_API_URL}/Login`)
     }
     const getProducts= async()=>{
       const res = await fetch(`${BASE_API_URL}/api/listProduct?userId=${userId}`)

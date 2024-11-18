@@ -60,7 +60,7 @@ export default function CarPage({params}) {
       <p><strong>Updated At:</strong> {new Date(carData?.updatedAt).toLocaleString()}</p>
 
       <div className={styles.button}> 
-        <button onClick={()=>router.push(`/car/edit/${carData._id}`)}>Edit</button> 
+        <button onClick={()=>router.push(`${BASE_API_URL}/car/edit/${carData._id}`)}>Edit</button> 
         <button onClick={()=>handleDelete(carData?._id)}>Delete</button>
       </div>
       {error && <p>{error}</p>}
