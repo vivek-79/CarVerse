@@ -16,9 +16,6 @@ export default function HomePage() {
       return null;
     }
     const user = localStorage.getItem('User')
-    if(!user){
-      router.push(`/Login`)
-    }
     const userId =JSON.parse(user)._id
     const getProducts= async()=>{
       const res = await fetch(`${BASE_API_URL}/api/listProduct?userId=${userId}`)
