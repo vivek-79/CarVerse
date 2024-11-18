@@ -6,11 +6,13 @@ import { BASE_API_URL } from '@/utils/constants'
 import { useRouter } from 'next/navigation'
 export default function HomePage() {
 
+  const [cars,setCars] = useState([])
+  const router = useRouter()
+
+  
   if(!BASE_API_URL){
     return null;
   }
-  const [cars,setCars] = useState([])
-  const router = useRouter()
   useEffect(()=>{
     const user = localStorage.getItem('User')
     const userId =JSON.parse(user)._id
