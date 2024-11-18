@@ -12,9 +12,6 @@ function TopBar() {
     const [cars, setCars] = useState([]);
     useEffect(() => {
         const user = localStorage.getItem('User')
-        if(!user){
-            router.push('/Login')
-        }
         if (user) {
             try {
                 setUserId(JSON.parse(user)._id)
