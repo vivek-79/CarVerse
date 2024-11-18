@@ -13,8 +13,27 @@ export default function AddCarPage() {
     const [loadind,setLoading] =useState(false)
     const router = useRouter()
 
-    const user = localStorage.getItem('User')
-    const userId =JSON.parse(user)._id
+
+    const [userId,setUserId] = useState('')
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+          const user = localStorage.getItem('User')
+          if (user) {
+            const parsedUser = JSON.parse(user)
+            if (parsedUser._id) {
+              setUserId(parsedUser._id)
+            } else {
+              router.push('/Login')
+            }
+          } else {
+            router.push('/Login')
+          }
+        }
+      }, [router])
+    
+      if (!userId) {
+        return <p>Loading...</p>
+      }
     const addImg = async (e)=>{
         setLoading(true)
         try {
