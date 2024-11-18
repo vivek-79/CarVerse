@@ -17,7 +17,7 @@ export default function HomePage() {
     }
     const user = localStorage.getItem('User')
     if(!user){
-      router.push(`/Login`)
+      router.push(`${BASE_API_URL}/Login`)
     }
     const userId =JSON.parse(user)._id
     const getProducts= async()=>{

@@ -5,6 +5,7 @@ import "../globals.css";
 import TopBar from "@/components/TopBar";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { BASE_API_URL } from "@/utils/constants";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
   useEffect(()=>{
     const user = localStorage.getItem('User')
     if(!user){
-    router.push(`/Login`)
+    router.push(`${BASE_API_URL}/Login`)
   }
   },[])
   return (
