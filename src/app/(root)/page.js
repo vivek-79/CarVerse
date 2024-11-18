@@ -9,14 +9,14 @@ export default function HomePage() {
   const [cars,setCars] = useState([])
   const router = useRouter()
 
-  
-  if(!BASE_API_URL){
-    return null;
-  }
+
   useEffect(()=>{
     const user = localStorage.getItem('User')
     const userId =JSON.parse(user)._id
 
+    if(!BASE_API_URL){
+      return null;
+    }
     if(!userId){
       router.push('/Login')
     }
@@ -26,7 +26,7 @@ export default function HomePage() {
       setCars(result.cars)
     }
     getProducts();
-  },[])
+  },[router])
   return (
     <div className='home'>
       {cars && cars.map((item)=>(
