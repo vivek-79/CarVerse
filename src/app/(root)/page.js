@@ -11,15 +11,15 @@ export default function HomePage() {
 
 
   useEffect(()=>{
-    const user = localStorage.getItem('User')
-    const userId =JSON.parse(user)._id
 
     if(!BASE_API_URL){
       return null;
     }
-    if(!userId){
-      router.push(`${BASE_API_URL}/Login`)
+    const user = localStorage.getItem('User')
+    if(user){
+      router.push(`/Login`)
     }
+    const userId =JSON.parse(user)._id
     const getProducts= async()=>{
       const res = await fetch(`${BASE_API_URL}/api/listProduct?userId=${userId}`)
       const result= await res.json()
