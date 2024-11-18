@@ -28,7 +28,6 @@ export default function LoginPage() {
             })
 
             const result = await register.json()
-            console.log(result)
             if (!result.success) {
                 seterror(result.message)
             }
@@ -52,10 +51,10 @@ export default function LoginPage() {
                     <input type='text'
                     placeholder='Email'
                         required
-                        {...register('email', { pattern: /^[^@]+@[^@]+\.[^@]+$/ })}
+                        {...register('email')}
                     />
                     <MailIcon sx={{color:'gray'}}/>
-                    {error.email && <p className='error'>{errors.email.message}</p>}
+                    {error.email && <p className='error'>{error.email.message}</p>}
                 </div>
                 <div className='form-comp'>
                     <input type='password'
