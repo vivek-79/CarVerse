@@ -1,5 +1,6 @@
 'use client'
 import { useRouter } from "next/navigation";
+import React,{useState,useEffect} from "react";
 
 export default function CarDetailPage() {
   const router = useRouter();
