@@ -68,7 +68,7 @@ export default function LoginPage() {
                 <div className='form-comp' id='button'>
                     <button type='submit'>Submit</button>
                 </div>
-                <p>Don&apos;t have account ?| <Link href='/Register'>Signup</Link></p>
+                <p>Don&apos;t have account ?| <Link href='/register'>Signup</Link></p>
             </form>
         </div>
     )
