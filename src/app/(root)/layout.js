@@ -3,9 +3,6 @@
 import localFont from "next/font/local";
 import "../globals.css";
 import TopBar from "@/components/TopBar";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { BASE_API_URL } from "@/utils/constants";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -19,13 +16,6 @@ const geistMono = localFont({
 });
 
 export default function RootLayout({ children }) {
-  const router = useRouter()
-  useEffect(()=>{
-    const user = localStorage.getItem('User')
-    if(!user){
-    router.push(`${BASE_API_URL}/Login`)
-  }
-  },[])
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
